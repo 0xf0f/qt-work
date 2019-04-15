@@ -8,5 +8,6 @@ setup(
     license='MIT',
     author='0xf0f',
     author_email='',
-    description=''
+    description='',
+    install_requires=['PyQt5']
 )
