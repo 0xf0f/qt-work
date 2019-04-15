@@ -85,24 +85,6 @@ class ManagerWindow(qt.QWidget):
             window.stdout.verticalScrollBar().setValue(
                 window.stdout.verticalScrollBar().maximum()
             )
-    #     screen: qt.QScreen = qt.qApp.primaryScreen()
-    #     screen_geometry: qt.QRect = screen.availableGeometry()
-    #
-    #     x = 0
-    #     y = 0
-    #
-    #     for window in self.work_windows:
-    #         window.show()
-    #
-    #         window.move(
-    #             screen_geometry.topLeft() + qt.QPoint(x, y)
-    #         )
-    #
-    #         x += window.frameGeometry().width()
-    #         if x > screen_geometry.width():
-    #             x = 0
-    #             y += window.frameGeometry().height()
-    #
 
     def closeEvent(self, event: qt.QCloseEvent):
         for queue in self.queues:
@@ -113,16 +95,3 @@ class ManagerWindow(qt.QWidget):
                 window.close()
 
         super().closeEvent(event)
-    #
-    # def changeEvent(self, event: qt.QWindowStateChangeEvent):
-    #     if (
-    #             event.type() == event.WindowStateChange and
-    #             event.oldState() & qt.constants.WindowMinimized
-    #     ) or (
-    #             event.type() == event.WindowActivate
-    #     ):
-    #         for window in self.work_windows:  # type: qt.QWidget
-    #             window.show()
-    #             window.raise_()
-    #
-    #     super().changeEvent(event)
